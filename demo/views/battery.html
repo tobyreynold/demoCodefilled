@@ -5,13 +5,47 @@
     <title>Battery Status API</title>
   </head>
   <body>
-    <h1><a href="http://codefilled.com">Codefilled.com</a></h1>
-    
-    <h2>Demo集合</h2>
-    <ul>
-      <li><a href="/battery">H5🔋电池 API<a/></li>
-      <li><a href="/geolocation">腾讯定位组件demo<a/></li>
-    </ul>
+    <h2>H5🔋电池 API demo</h2>
+    <table>
+      <tr>
+        <td>Battery Status API</td>
+        <td width="250px"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>charging</td>
+        <td id="charging"></td>
+      </tr>
+      <tr>
+        <td>chargingTime</td>
+        <td id="chargingTime"></td>
+      </tr>
+      <tr>
+        <td>dischargingTime</td>
+        <td id="dischargingTime"></td>
+      </tr>
+      <tr>
+        <td>battery level</td>
+        <td id="level"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>promise status</td>
+        <td id="promiseStatus"></td>
+      </tr>
+      <tr>
+        <td>number of updates</td>
+        <td id="numberUpdates"></td>
+      </tr>
+    </table>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
     <script>
       var numberUpdates = 0;
