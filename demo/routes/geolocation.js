@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('geolocation', { title: 'export' });
 });
 
+router.get('/maps', function(req, res, next) {
+  res.render('mapgeo', { title: 'export' });
+});
+
 module.exports = router;
