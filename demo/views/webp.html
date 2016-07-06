@@ -21,7 +21,7 @@
     	margin: 20px 0;
     }
     .gallery {
-    	height: 220px;
+    	height: 230px;
     	list-style: none;
     	margin-bottom: 20px;
     	overflow: hidden;
@@ -35,7 +35,7 @@
 
     .gallery li span{
     	display: block;
-    	margin-top: 5px;
+    	margin-top: 10px;
     	text-align: center;
     }
 
@@ -43,6 +43,43 @@
     	display: block;
     	max-height: 200px;
     }
+
+    .transparent {
+    	background: url(../images/transparent.png);
+	}
+
+	.change-bg {
+		width: 60px;
+		height: 180px;
+		position: fixed;
+		top: 20px;
+		right: 0;
+		background: #efefef;
+	} 
+
+	.change-bg div {
+		margin: 10px auto;
+	}
+
+	.cub {
+		width: 30px;
+		height: 30px;
+	}
+
+	.red {
+		
+		background-color: #ff0000;
+	}
+
+	.blue {
+		background-color: blue;
+	}
+
+	.green {
+		background-color: green;
+	}
+
+
   </style>
   <body>
     
@@ -66,6 +103,17 @@
       	<span>webp图片</span>
       </li>
     </ul>
+    <h4>品牌文字logo</h4>
+    <ul class="gallery">
+      <li>
+      	<img src="http://p0.meituan.net/150.120.90/xianfu/459c7ff0f5468eda85c96791cf5e145c14336.jpg">
+      	<span>原图</span>
+  	  </li>
+      <li>
+      	<img src="http://p0.meituan.net/150.120.90/xianfu/459c7ff0f5468eda85c96791cf5e145c14336.jpg.webp">
+      	<span>webp图片</span>
+      </li>
+    </ul>
     <h4>规则说明图</h4>
     <ul class="gallery">
       <li><img src="http://p0.meituan.net/codeman/6451e7bcc23281ba0a655cd461af8cea14166.png">
@@ -80,5 +128,34 @@
       <li><img src="http://p1.meituan.net/codeman/5045debe4ec6a12cf45968414f57773d10836.png.webp">
       <span>webp图片</span></li>
     </ul>
+
+    <div class="change-bg">
+    	<div class="cub red">
+    	</div>
+    	<div class="cub transparent">
+    	</div>
+    	<div class="cub blue">
+    	</div>
+    	<div class="cub green">
+    	</div>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
+    <script type="text/javascript">
+
+    	$("body").on('click','.red',function() {
+    		var me = $(this);
+    		me.parents("body").removeAttr("class").addClass("red");
+    	}).on("click",".transparent",function() {
+    		var me = $(this);
+    		me.parents("body").removeAttr("class").addClass("transparent");
+    	}).on("click",".blue",function() {
+    		var me = $(this);
+    		me.parents("body").removeAttr("class").addClass("blue");
+    	}).on("click",".green",function() {
+    		var me = $(this);
+    		me.parents("body").removeAttr("class").addClass("green");
+    	});
+
+    </script>
   </body>
 </html>
