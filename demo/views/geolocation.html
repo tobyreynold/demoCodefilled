@@ -72,7 +72,6 @@
         	var url = 'http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js';
         	var script = document.createElement('script');
             script.src = url;
-            //var first = document.body.firstChild;
             script.onload = script.onreadystatechange = function(){
               if(script.readyState && script.readyState != 'loaded' && script.readyState != 'complete') return;
               script.onreadystatechange = script.onload = null;
@@ -124,7 +123,6 @@
             document.getElementById("demo").innerHTML += "停止监听位置！<br /><br />";
             document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
         };
-
 
         document.getElementById("pos-area").style.height = (document.body.clientHeight - 110) + 'px';
 
