@@ -41,7 +41,7 @@
         }
     </style>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
-    <script type="text/javascript" src="http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+    <!--<script type="text/javascript" src="http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>-->
 </head>
 <body>
 	<h2>腾讯定位Demo</h2>
@@ -60,6 +60,30 @@
        myapp 调用来源，一般为您的应用名称，为了保障对您的服务，请务必填写
       (后需要和腾讯沟通定义我司的来源，未来可以针对我司进行一些大客户的服务)
     */
+
+    function loadTMap(callback) {
+            callback = callback || function () {};
+            if (window.__tmap_loading) {
+            	return setTimeout(function () {
+                	loadTMap(callback);
+                }, 100);
+            }
+            window.__tmap_loading = true;
+        	var url = 'http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js';
+        	var script = document.createElement('script');
+            script.src = url;
+            //var first = document.body.firstChild;
+            script.onload = script.onreadystatechange = function(){
+              if(script.readyState && script.readyState != 'loaded' && script.readyState != 'complete') return;
+              script.onreadystatechange = script.onload = null;
+              if(callback) callback();
+            };
+            document.body.appendChild(script);
+    }
+
+
+    loadTMap(function () {
+
         var geolocation = new qq.maps.Geolocation("DZYBZ-73WWI-FG6GZ-5JRFR-PNVIE-4OFUL", "myapp"); 
 
         	positionNum = 0;
@@ -103,6 +127,8 @@
 
 
         document.getElementById("pos-area").style.height = (document.body.clientHeight - 110) + 'px';
+
+        });
     </script>
 </body>
 </html>
