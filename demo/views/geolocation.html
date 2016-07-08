@@ -62,11 +62,8 @@
     */
 
     function loadTMap(callback) {
-            callback = callback || function () {};
             if (window.__tmap_loading) {
-            	return setTimeout(function () {
-                	loadTMap(callback);
-                }, 100);
+            	return;
             }
             window.__tmap_loading = true;
         	var url = 'http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js';
