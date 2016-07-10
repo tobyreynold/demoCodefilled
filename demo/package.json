@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "forever start ./bin/www",
-    "dev" : "supervisor ./bin/www"
+    "dev": "supervisor ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -16,6 +16,7 @@
     "forever": "^0.15.2",
     "morgan": "~1.6.1",
     "node-fetch": "^1.5.3",
+    "redis": "^2.6.2",
     "serve-favicon": "~2.3.0",
     "supervisor": "^0.10.0"
   }
