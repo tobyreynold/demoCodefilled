@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var redis = require('redis'),
-    client = redis.createClient();
+// var redis = require('redis'),
+//     client = redis.createClient();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -34,7 +34,9 @@ router.get('/redis', function(req, res, next) {
  //    res.render('redis', { title: 'redis' , data: redis_data});
 	// });
 
-  
+  	res.render('redis', { title: 'redis' 
+  	//	, data: redis_data
+  	});
 });
 
 module.exports = router;
