@@ -64,6 +64,7 @@
     function loadTMap(callback) {
             if (window.__tmap_loading) {
             	return;
+
             }
             window.__tmap_loading = true;
         	var url = 'http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js';
@@ -84,7 +85,7 @@
 
         	positionNum = 0;
         	options = {timeout: 8000};
-
+            geolocation.getLocation(showPosition, showErr, options);
 		$("body").on("click","#accurate",function(){
 			geolocation.getLocation(showPosition, showErr, options);
 		}).on("click","#rough",function() {
@@ -107,6 +108,7 @@
             document.getElementById("demo").innerHTML += "序号：" + positionNum;
             document.getElementById("demo").appendChild(document.createElement('p')).innerHTML = "定位失败！";
             document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+            geolocation.getIpLocation(showPosition, showErr);
         };
 
         function showWatchPosition() {
