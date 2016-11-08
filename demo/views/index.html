@@ -32,7 +32,7 @@
     <script type="text/javascript">
       $("body").on('click','#logs',function(){
           var ua = navigator.userAgent;
-              param = '?id=312&time=999&ua' + encodeURIComponent(ua);
+              param = '?id=312&time=999&ua=' + encodeURIComponent(ua);
           $.ajax({type: 'GET',
                 url:'/logs'+ param,
                 success:function(data) {
