@@ -25,6 +25,21 @@
       <li><a href="/webp">webp图片Demo<a/></li>
       <li><a href="/">Nodejs读写redis Demo<a/></li>
     </ul>
+    <div>
+        <button type="button" id="logs">发logs</button>
+    </div>
     <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript">
+      $("body").on('click','#logs',function(){
+          var ua = navigator.userAgent;
+              param = '?id=312&time=999&ua' + encodeURIComponent(ua);
+          $.ajax({type: 'GET',
+                url:'/logs'+ param,
+                success:function(data) {
+                   console.log("send success!");
+                }
+            });
+      });
+    </script>
   </body>
 </html>
