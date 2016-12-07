@@ -207,5 +207,50 @@
     	});
 
     </script>
+    <script>
+      function ajax(options) {
+          var url = options.url || '',
+              type = options.type || 'GET',
+              data = options.data || {},
+              dataType = options.dataType,
+              callback = options.success || function(){};
+
+          var xhr = new XMLHttpRequest();
+            xhr.open(type,url,true);
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4){
+                    if((xhr.status >=200 && xhr.status < 300 ) || xhr.status == 304){
+                        if(xhr.response!=''){
+                            if(dataType == 'json') {
+                                callback(JSON.parse(xhr.response));
+                            } else {
+                              callback(xhr.response);  
+                            }
+                            return;
+                        }
+                    }
+                }
+            };
+
+            if (type == 'GET' && url.split("?")[1]) {
+              xhr.send(url.split("?")[1]);
+            } else if(type == 'POST') {
+              xhr.send(data);
+            } else {
+              xhr.send(null);  
+            }
+      }
+
+      ajax({
+        url:"https://appfirsttest.mybluemix.net/first_test?_id=b0cc000791e5e056567e3c2a1fbee828",
+        type: "GET",
+        dataType: "json",
+        success: function(data){
+          console.log(data);
+        }
+      });  
+       
+    </script>
+
   </body>
 </html>
