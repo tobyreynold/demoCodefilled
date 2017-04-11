@@ -83,6 +83,9 @@
         };
 
         function showErr(error) {
+            console.log(error);
+            alert(error);
+            alert(JSON.stringify(error));
             switch(error.code) {
                 case error.TIMEOUT:
                 alert("A timeout occured! Please try again!");
