@@ -4,6 +4,7 @@
     <meta name="description" content="Test for Battery Status API"/>
     <title>Demo集合</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="/stylesheets/style.css"></link>
   </head>
   <style type="text/css">
     * {
@@ -14,10 +15,18 @@
     }
   </style>
   <body>
-    <h1><a href="https://codefilled.com">Codefilled.com</a></h1>
-
-    <h2>Demo集合</h2>
-    <ul>
+    <nav class="navi">
+         <div class="logo">Demo.codefilled</div>
+         <div class="menu">
+            <div class="menu-item">Intro</div>
+            <div class="menu-item">Explore</div>
+            <div class="menu-item">About</div>
+         </div>
+    </nav>
+    <div class="page-propaganda">
+        <h2></h2>
+    </div>
+    <ul class="demo-gallery">
       <li><a href="/battery">H5🔋电池 API<a/></li>
       <li><a href="/geolocation">腾讯异步定位组件demo<a/></li>
       <li><a href="/geolocation/location">腾讯定位组件demo<a/></li>
@@ -25,24 +34,9 @@
       <li><a href="/webp">webp图片Demo<a/></li>
       <li><a href="/">Nodejs读写redis Demo<a/></li>
     </ul>
-    <div>
-        <button type="button" id="logs">发logs</button>
-    </div>
+    <script src="/js/vue.js"></script>
     <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script type="text/javascript">
-      $("body").on('click','#logs',function(){
-          var ua = navigator.userAgent;
-              param = '?id=312&time=999&ua=' + encodeURIComponent(ua);
-          $.ajax({type: 'GET',
-                url:'/logs'+ param,
-                success:function(data) {
-                   console.log("send success!");
-                }
-            });
-      });
-      setTimeout(function() {
-        $("title").text("微信title测试");
-      }, 3000);
     </script>
   </body>
 </html>
