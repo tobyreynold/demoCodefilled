@@ -52,6 +52,8 @@
     </div>
     <script type="text/javascript" src="https://apps.bdimg.com/libs/zepto/1.1.4/zepto.js"></script>
     <script>
+      var ua = navigator.userAgent;
+      $("#ua").text(ua);
       var numberUpdates = 0;
       var battery;
 
@@ -93,9 +95,6 @@
       $("body").on("touchstart","#table",function() {
         alert(1);
       });
-
-      var ua = navigator.userAgent;
-      $("#ua").text(ua);
     </script>
   </body>
 </html>
