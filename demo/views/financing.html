@@ -1,0 +1,129 @@
+<html>
+
+<body>
+
+    <head>
+        <meta name="description" content="Test for Battery Status API" />
+        <title>Demo集合</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="/stylesheets/style.css"></link>
+        <link rel="stylesheet" href="/stylesheets/calendar.css"></link>
+        <script src="/js/vue.js"></script>
+    </head>
+    <style type="text/css">
+        * {
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            text-size-adjust: none
+        }
+    </style>
+
+    <body>
+        <nav class="navi">
+            <div class="logo">Demo.codefilled</div>
+            <div class="menu">
+                <div class="menu-item">Intro</div>
+                <div class="menu-item">Explore</div>
+                <div class="menu-item">About</div>
+            </div>
+        </nav>
+        <div class="page-propaganda">
+
+            <div id="calendar">
+                <h3></h3>
+                <ul id="date-list">
+                    <li></li>
+                    <li v-for="date in dates" v-bind:class="date.class">{{date.text}}<i>{{date.day}}</i></li>
+                </ul>
+            </div>
+            <div id="app">
+                <ul>
+                    <li v-for="todo in todos">
+                        {{todo.text}}
+                    </li>
+                </ul>
+                <input type="text" v-model="message">
+                <button v-on:click="addMessage">输入</button>
+                <p>{{message}}</p>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var addClass = function(obj, cls) {
+                var obj_class = obj.className, //获取 class 内容.
+                      blank = (obj_class != '') ? ' ' : ''; //判断获取到的 class 是否为空, 如果不为空在前面加个'空格'.
+                  
+                added = obj_class + blank + cls; //组合原来的 class 和需要添加的 class.  
+                obj.className = added; //替换原来的 class.
+            }
+            var calendar = new Vue({
+                el: '#calendar',
+                data: {
+                    dates: []
+                },
+                methods: {
+                    plus: function(callback) {
+                        var className, newday,
+                            date = new Date(),
+                            strdate = date.getDate(),
+                            month = date.getMonth(),
+                            month = month + 1,
+                            year = date.getFullYear(),
+                            hour = date.getHours(),
+                            minutes = date.getMinutes(),
+                            seconds = date.getSeconds(),
+                            day = date.getDay(),
+                            day = "星期" + "日一二三四五六".charAt(day);
+
+                        var special = ['8', '10', '15', '17', '20', ''];
+
+                        for (var i = 1; i <= 31; i++) {
+                            if (i === strdate) {
+                                className = 'current';
+                                newday = day;
+                            } else {
+                                className = '';
+                                newday = '';
+                            }
+                            this.dates.push({
+                                text: i,
+                                class: className,
+                                day: newday
+                            });
+                        }
+                        if (callback) {
+                            var text = year + '年' + month + '月' + strdate + '日 ' + hour + '点' + minutes + '分' + seconds + '秒';
+                            callback(text);
+                        }
+                    },
+
+                    showTime: function(text) {
+                        this.$el.children[0].innerHTML = text;
+                    }
+
+                }
+            });
+            calendar.plus(calendar.showTime);
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'hello!',
+                    todos: []
+                },
+                methods: {
+                    addMessage: function() {
+                        this.todos.push({
+                            'text': this.message
+                        });
+                    }
+                }
+            });
+        </script>
+        <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+        <script type="text/javascript">
+        </script>
+    </body>
+
+</html>

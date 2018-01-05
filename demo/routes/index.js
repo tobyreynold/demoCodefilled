@@ -13,6 +13,11 @@ router.get('/webp', function(req, res, next) {
   res.render('webp', { title: 'export' });
 });
 
+router.get('/financing', function(req, res, next) {
+  res.render('financing', { title: 'export' });
+});
+
+
 router.get('/logs', function(req, res, next) {
   var query = req.query,
       data = JSON.stringify(query) + '|';
