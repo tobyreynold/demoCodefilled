@@ -36,16 +36,15 @@
                     <li></li>
                     <li v-for="date in dates" v-bind:class="date.class" v-bind:title="date.message">{{date.text}}<i>{{date.day}}</i></li>
                 </ul>
-            </div>
-            <div id="app">
+                <h4>特殊还款日期：</h4>
                 <ul>
-                    <li v-for="todo in todos">
-                        {{todo.text}}
+                    <li v-for="spec in special">
+                        {{spec}}
                     </li>
                 </ul>
                 <input type="text" v-model="message">
-                <button v-on:click="addMessage">输入</button>
-                <p>{{message}}</p>
+                <button v-on:click="addSpecial">输入</button>
+                <!-- <p>{{message}}</p> -->
             </div>
         </div>
 
@@ -60,7 +59,10 @@
             var calendar = new Vue({
                 el: '#calendar',
                 data: {
-                    dates: []
+                    message: '3',
+                    todos: [],
+                    dates: [],
+                    special: [8, 10, 15, 17, 20, 26, 27]
                 },
                 methods: {
                     plus: function(callback) {
@@ -77,8 +79,7 @@
                             day = "星期" + "日一二三四五六".charAt(day);
 
 
-                        var special = [8, 10, 15, 17, 20, 26, 27],
-                            isLeapYear = year % 4 === 0 ? true : false;
+                        var isLeapYear = year % 4 === 0 ? true : false;
 
                         if (isLeapYear && month == 2) {
                             var trueDay = 29;
@@ -95,7 +96,7 @@
                                 className = 'current';
                                 newday = day;
                             } else {
-                                if (special.indexOf(i) >= 0) {
+                                if (this.special.indexOf(i) >= 0) {
                                     className = ' special';
                                     newday = '';
                                 } else {
@@ -149,27 +150,25 @@
 
                     showTime: function(text) {
                         this.$el.children[0].innerHTML = text;
+                    },
+
+                    addSpecial: function() {
+                        console.log(this.message);
+                        var newNum = parseInt(this.message);
+                        if (newNum > 0 && newNum < 29) {
+                            if (this.special.indexOf(newNum) < 0) {
+                                this.special.push(newNum);
+                            } else {
+                                alert('已经有重复的数字');
+                            }
+                        } else {
+                            alert('请输入合适的数字');
+                        }
                     }
 
                 }
             });
             calendar.plus(calendar.showTime);
-
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    message: 'hi!',
-                    todos: []
-                },
-                methods: {
-                    addMessage: function() {
-                        console.log(this);
-                        this.todos.push({
-                            'text': this.message
-                        });
-                    }
-                }
-            });
         </script>
         <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
         <script type="text/javascript">
