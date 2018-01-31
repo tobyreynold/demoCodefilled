@@ -34,7 +34,7 @@
                 <h3></h3>
                 <ul id="date-list">
                     <li></li>
-                    <li v-for="date in dates" v-bind:class="date.class">{{date.text}}<i>{{date.day}}</i></li>
+                    <li v-for="date in dates" v-bind:class="date.class" v-bind:title="date.message">{{date.text}}<i>{{date.day}}</i></li>
                 </ul>
             </div>
             <div id="app">
@@ -76,26 +76,75 @@
                             day = date.getDay(),
                             day = "星期" + "日一二三四五六".charAt(day);
 
-                        var special = ['8', '10', '15', '17', '20', ''];
 
-                        for (var i = 1; i <= 31; i++) {
+                        var special = [8, 10, 15, 17, 20, 26, 27],
+                            isLeapYear = year % 4 === 0 ? true : false;
+
+                        if (isLeapYear && month == 2) {
+                            var trueDay = 29;
+                        } else {
+                            if (month == 2) {
+                                var trueDay = 28;
+                            } else {
+                                var trueDay = month <= 7 ? (month % 2 === 0 ? 30 : 31) : (month % 2 === 0 ? 31 : 30);
+                            }
+                        }
+
+                        for (var i = 1; i <= trueDay; i++) {
                             if (i === strdate) {
                                 className = 'current';
                                 newday = day;
                             } else {
-                                className = '';
-                                newday = '';
+                                if (special.indexOf(i) >= 0) {
+                                    className = ' special';
+                                    newday = '';
+                                } else {
+                                    className = '';
+                                    newday = '';
+                                }
                             }
+
+                            var specialText = this.specialDay(i);
                             this.dates.push({
                                 text: i,
                                 class: className,
-                                day: newday
+                                day: newday,
+                                message: specialText
                             });
                         }
                         if (callback) {
                             var text = year + '年' + month + '月' + strdate + '日 ' + hour + '点' + minutes + '分' + seconds + '秒';
                             callback(text);
                         }
+                    },
+
+                    specialDay: function(index) {
+                        switch (index) {
+                            case 8:
+                                var text = '浦发信用卡';
+                                break;
+                            case 10:
+                                var text = '支付宝花呗';
+                                break;
+                            case 15:
+                                var text = '招商银行闪电贷+民生银行备用金';
+                                break;
+                            case 17:
+                                var text = '小米金融还款';
+                                break;
+                            case 20:
+                                var text = '南京银行信用贷';
+                                break;
+                            case 26:
+                                var text = '北京农商银行房贷';
+                                break;
+                            case 27:
+                                var text = '招商银行信用卡+京东白条';
+                                break;
+                            default:
+                                var text = '';
+                        }
+                        return text;
                     },
 
                     showTime: function(text) {
@@ -109,11 +158,12 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: 'hello!',
+                    message: 'hi!',
                     todos: []
                 },
                 methods: {
                     addMessage: function() {
+                        console.log(this);
                         this.todos.push({
                             'text': this.message
                         });
