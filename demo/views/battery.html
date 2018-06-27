@@ -91,22 +91,24 @@
             border-bottom: 3px solid #fff;
             border-left: 3px solid #fff;
             z-index: 10;
-            left: 50%;
-            bottom: 15px;
-            transform: translateX(-50%) rotate(-45deg);
-            -webkit-transform: translateX(-50%) rotate(-45deg);
+            right: 15px;
+            bottom: 50%;
+            transform: translateY(-50%) rotate(-135deg);
+            -webkit-transform: translateY(-50%) rotate(-135deg);
             animation: flash 2s linear infinite;
             -webkit-animation: flash 2s linear infinite;
         }
         
         .smoke {
-            background: url("http://p1.meituan.net/travelcube/d53d0fc48ddfce92f3c7604f62c638bf193850.png") repeat;
+            background: url("http://p1.meituan.net/travelcube/d53d0fc48ddfce92f3c7604f62c638bf193850.png") repeat-x;
             height: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 200%;
             background-size: cover;
+            animation: shake 2.5s linear infinite;
+            -webkit-animation: shake 2.5s linear infinite;
         }
         
         .title,
@@ -180,9 +182,9 @@
         
         .animate3 {
             animation: opacityTrans 1s linear 5s 1 normal;
-            /* animation-fill-mode: forwards; */
+            animation-fill-mode: forwards;
             -webkit-animation: opacityTrans 1s linear 5s 1 normal;
-            /* -webkit-animation-fill-mode: forwards; */
+            -webkit-animation-fill-mode: forwards;
         }
         
         .porm {
