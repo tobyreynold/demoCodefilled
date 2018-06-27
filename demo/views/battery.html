@@ -111,7 +111,9 @@
         .moon,
         .moon1,
         .title5,
-        .tips5 {
+        .tips5,
+        .redt,
+        .wine {
             opacity: 0;
         }
         
@@ -186,9 +188,23 @@
         /* place */
         
         .placeanimate {
-            animation: opacityTrans 1s linear .5s 1 normal;
+            animation: placeTrans 1s linear .5s 1 normal;
             animation-fill-mode: forwards;
-            -webkit-animation: opacityTrans 1s linear .5s 1 normal;
+            -webkit-animation: placeTrans 1s linear .5s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .placeanimate1 {
+            animation: placeTrans 1s linear 3s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: placeTrans 1s linear 3s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .placeanimate2 {
+            animation: placeTrans 1s linear 5s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: placeTrans 1s linear 5s 1 normal;
             -webkit-animation-fill-mode: forwards;
         }
         
@@ -204,10 +220,24 @@
         }
         
         .redt {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+            z-index: 12;
             background-image: url("http://p0.meituan.net/travelcube/d5599df42e41d99ff17df63e3f39c0d61187186.png");
         }
         
         .wine {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+            z-index: 14;
             background-image: url("http://p0.meituan.net/travelcube/17b2fef4422bed64d8df0a886843bb35587569.png");
         }
         /* page 3*/
@@ -344,6 +374,24 @@
                 opacity: 1;
             }
         }
+        
+        @keyframes placeTrans {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes placeTrans {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -381,7 +429,7 @@
             /* page2 */
             content: (function() {
                 var dom = document.createElement('div');
-                dom.innerHTML = '<div class="porm"></div><div class="place"></div>';
+                dom.innerHTML = '<div class="porm"></div><div class="place"></div><div class="redt"></div><div class="wine"></div>';
                 dom.className = 'bg2';
                 dom.style.cssText = 'font-size:13px;color:rgb(230, 230, 63);';
                 return dom;
@@ -428,17 +476,9 @@
         console.log($(dom));
         if (index == 1) {
             $(dom).find(".porm").addClass("animate");
-            $(dom).find(".place").addClass("animate1");
-            // setTimeout(function() {
-            //     $(dom).find(".place").addClass("animate");
-            // }, 1000);
-
-            // setTimeout(function() {
-            //     $(dom).find(".place").addClass("redt");
-            // }, 2000);
-            // setTimeout(function() {
-            //     $(dom).find(".place").addClass("wine");
-            // }, 3000);
+            $(dom).find(".place").addClass("placeanimate");
+            $(dom).find(".redt").addClass("placeanimate1");
+            $(dom).find(".wine").addClass("placeanimate2");
         } else if (index == 2) {
             $(dom).find(".gubei").addClass("animate");
             $(dom).find(".title3").addClass("animate1");
