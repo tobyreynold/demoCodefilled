@@ -32,7 +32,7 @@
             width: 100%;
             height: 100%;
             background: url('http://p0.meituan.net/travelcube/8d8af2366901d55c623fa5940e80c31771299.png') no-repeat;
-            background-size: cover;
+            background-size: 100%;
         }
         
         .bg2 {
@@ -40,27 +40,27 @@
             color: #FFF;
             text-align: center;
             width: 100%;
-            height: 100%;
-            background: url('http://p1.meituan.net/travelcube/5bd3a9554bb90ce7c8984dd685a33b621062079.png') no-repeat;
-            background-size: cover;
+            height: 120%;
+            background: url('http://p1.meituan.net/travelcube/5bd3a9554bb90ce7c8984dd685a33b621062079.png') repeat-y;
+            background-size: 100%;
         }
         
         .bg3 {
             color: #FFF;
             text-align: center;
             width: 100%;
-            height: 100%;
-            background: url('https://p0.meituan.net/travelcube/b852c4160060a4cb7043dc268eaa18b3940217.png') no-repeat;
-            background-size: cover;
+            height: 120%;
+            background: url('https://p0.meituan.net/travelcube/b852c4160060a4cb7043dc268eaa18b3940217.png') repeat-y;
+            background-size: 100%;
         }
         
         .bg4 {
             color: #FFF;
             text-align: center;
             width: 100%;
-            height: 100%;
+            height: 120%;
             background: url("http://p0.meituan.net/travelcube/936f5caea115ca554bae1047c1a0ff991250326.png") no-repeat;
-            background-size: cover;
+            background-size: 100%;
         }
         
         .bg5 {
@@ -97,6 +97,16 @@
             -webkit-transform: translateX(-50%) rotate(-45deg);
             animation: flash 2s linear infinite;
             -webkit-animation: flash 2s linear infinite;
+        }
+        
+        .smoke {
+            background: url("http://p1.meituan.net/travelcube/d53d0fc48ddfce92f3c7604f62c638bf193850.png") repeat;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-size: cover;
         }
         
         .title,
@@ -170,9 +180,9 @@
         
         .animate3 {
             animation: opacityTrans 1s linear 5s 1 normal;
-            animation-fill-mode: forwards;
+            /* animation-fill-mode: forwards; */
             -webkit-animation: opacityTrans 1s linear 5s 1 normal;
-            -webkit-animation-fill-mode: forwards;
+            /* -webkit-animation-fill-mode: forwards; */
         }
         
         .porm {
@@ -188,6 +198,7 @@
         /* place */
         
         .placeanimate {
+            opacity: 0;
             animation: placeTrans 1s linear .5s 1 normal;
             animation-fill-mode: forwards;
             -webkit-animation: placeTrans 1s linear .5s 1 normal;
@@ -195,6 +206,7 @@
         }
         
         .placeanimate1 {
+            opacity: 0;
             animation: placeTrans 1s linear 3s 1 normal;
             animation-fill-mode: forwards;
             -webkit-animation: placeTrans 1s linear 3s 1 normal;
@@ -202,9 +214,9 @@
         }
         
         .placeanimate2 {
-            animation: placeTrans 1s linear 5s 1 normal;
+            animation: placeTrans 1s linear 4s 1 normal;
             animation-fill-mode: forwards;
-            -webkit-animation: placeTrans 1s linear 5s 1 normal;
+            -webkit-animation: placeTrans 1s linear 4s 1 normal;
             -webkit-animation-fill-mode: forwards;
         }
         
@@ -247,7 +259,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             background-size: 100%;
             z-index: 10;
@@ -267,7 +279,7 @@
         .tips {
             background: url("http://p0.meituan.net/travelcube/8d64bb60e9196ab72de8662617889f5785223.png") no-repeat;
             background-size: 100%;
-            width: 400px;
+            width: 300px;
             height: 400px;
             position: absolute;
             top: 25%;
@@ -279,8 +291,8 @@
         .map {
             background: url("http://p1.meituan.net/travelcube/8431941a232cd30156d72f93b8d241121034657.png") no-repeat;
             background-size: 100%;
-            width: 400px;
-            height: 900px;
+            width: 378px;
+            height: 870px;
             position: absolute;
             top: 0%;
             left: 50%;
@@ -420,7 +432,7 @@
             content: (function() {
                 var dom = document.createElement('div');
                 dom.innerHTML = '<div class="title">' +
-                    '</div><div class="director"></div>';
+                    '</div><div class="director"></div><div class="smoke"></div>';
                 dom.className = 'bg1';
                 dom.style.cssText = 'font-size:13px;color:rgb(230, 230, 63);';
                 return dom;
@@ -465,8 +477,7 @@
         isLooping: 0,
         isOverspread: 1,
         isAutoplay: 0,
-        isVertical: true,
-        animateTime: 800,
+        animateTime: 600,
         animateType: 'rotate'
     });
 
@@ -479,6 +490,16 @@
             $(dom).find(".place").addClass("placeanimate");
             $(dom).find(".redt").addClass("placeanimate1");
             $(dom).find(".wine").addClass("placeanimate2");
+
+            setTimeout(function() {
+                $(dom).find(".place").css('display', 'none');
+                // $(dom).find(".redt").css('display', 'none');
+            }, 3000);
+            setTimeout(function() {
+                $(dom).find(".redt").css('display', 'none');
+            }, 4000);
+
+
         } else if (index == 2) {
             $(dom).find(".gubei").addClass("animate");
             $(dom).find(".title3").addClass("animate1");
