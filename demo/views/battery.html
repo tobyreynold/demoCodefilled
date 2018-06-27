@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css" type="text/css">
     <link rel="stylesheet" href="http://xs01.meituan.net/wmcdn/islider/2.2.0/iSlider.css" type="text/css">
     <title>宣传</title>
+    <link href="//p0.meituan.net" rel="dns-prefetch">
+    <link href="//p1.meituan.net" rel="dns-prefetch">
     <link href="//xs01.meituan.net" rel="dns-prefetch">
     <link href="//cdn.bootcss.com" rel="dns-prefetch">
     <link href="//vfile.meituan.net" rel="dns-prefetch">
@@ -20,17 +22,53 @@
         
         body {
             margin: 0;
-            background: #000;
+            background-color: #000;
         }
         
-        .bg {
+        .bg1 {
             font-size: 4em;
             color: #FFF;
             text-align: center;
             width: 100%;
             height: 100%;
-            background: url('http://p0.meituan.net/codeman/019859b241662dc43e0472694caa15b044614.jpg.webp') no-repeat;
+            background: url('http://p0.meituan.net/travelcube/8d8af2366901d55c623fa5940e80c31771299.png') no-repeat;
             background-size: cover;
+        }
+        
+        .bg2 {
+            font-size: 4em;
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: url('http://p1.meituan.net/travelcube/5bd3a9554bb90ce7c8984dd685a33b621062079.png') no-repeat;
+            background-size: cover;
+        }
+        
+        .bg3 {
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: url('https://p0.meituan.net/travelcube/b852c4160060a4cb7043dc268eaa18b3940217.png') no-repeat;
+            background-size: cover;
+        }
+        
+        .bg4 {
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: url("http://p0.meituan.net/travelcube/936f5caea115ca554bae1047c1a0ff991250326.png") no-repeat;
+            background-size: cover;
+        }
+        
+        .bg5 {
+            color: #FFF;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: #000;
         }
         
         .media-wrap {
@@ -54,11 +92,221 @@
             border-left: 3px solid #fff;
             z-index: 10;
             left: 50%;
-            bottom: 30px;
+            bottom: 15px;
             transform: translateX(-50%) rotate(-45deg);
             -webkit-transform: translateX(-50%) rotate(-45deg);
             animation: flash 2s linear infinite;
             -webkit-animation: flash 2s linear infinite;
+        }
+        
+        .title,
+        .director,
+        .porm,
+        .place,
+        .gubei,
+        .title3,
+        .tips,
+        .map,
+        .guide,
+        .moon,
+        .moon1,
+        .title5,
+        .tips5 {
+            opacity: 0;
+        }
+        
+        .title {
+            background: url("http://p1.meituan.net/travelcube/f4f13d3b8028fa8e018efc945600a86b129312.png") no-repeat;
+            width: 272px;
+            height: 190px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100%;
+            animation: opacityTrans 2s linear 1s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 2s linear 1s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .director {
+            background: url("http://p1.meituan.net/travelcube/2d0dc098b95c800d65b5bc6d688864e6368548.png") no-repeat;
+            width: 270px;
+            height: 530px;
+            position: absolute;
+            top: 8%;
+            left: 19%;
+            background-size: 100%;
+            animation: opacityTrans 2s linear 3s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 2s linear 3s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        /* animate */
+        
+        .animate {
+            animation: opacityTrans 1s linear .5s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 1s linear .5s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .animate1 {
+            animation: opacityTrans 1s linear 2s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 1s linear 2.5s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .animate2 {
+            animation: opacityTrans 1s linear 4s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 1s linear 4s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .animate3 {
+            animation: opacityTrans 1s linear 5s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 1s linear 5s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .porm {
+            background: url("https://p1.meituan.net/travelcube/1ce51864688bcc4df8bf04abac973f0735834.png") no-repeat;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100%;
+        }
+        /* place */
+        
+        .placeanimate {
+            animation: opacityTrans 1s linear .5s 1 normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: opacityTrans 1s linear .5s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .place {
+            background: url("https://p0.meituan.net/travelcube/faa62e557002dc4b4fc1ba4b85bf9d131190944.png") no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+            z-index: 10;
+        }
+        
+        .redt {
+            background-image: url("http://p0.meituan.net/travelcube/d5599df42e41d99ff17df63e3f39c0d61187186.png");
+        }
+        
+        .wine {
+            background-image: url("http://p0.meituan.net/travelcube/17b2fef4422bed64d8df0a886843bb35587569.png");
+        }
+        /* page 3*/
+        
+        .gubei {
+            background: url("http://p0.meituan.net/travelcube/07b3a8b87c79122535a854197738b3e61024722.png") no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+            z-index: 10;
+        }
+        
+        .title3 {
+            background: url("https://p1.meituan.net/travelcube/d5cf44b1d9acbc1649caf7c0ac1e4eca23336.png") no-repeat;
+            width: 272px;
+            height: 190px;
+            position: absolute;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100%;
+        }
+        
+        .tips {
+            background: url("http://p0.meituan.net/travelcube/8d64bb60e9196ab72de8662617889f5785223.png") no-repeat;
+            background-size: 100%;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* page 4*/
+        
+        .map {
+            background: url("http://p1.meituan.net/travelcube/8431941a232cd30156d72f93b8d241121034657.png") no-repeat;
+            background-size: 100%;
+            width: 400px;
+            height: 900px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .guide {
+            background: url("http://p0.meituan.net/travelcube/8e2ab1498cfe9d6c60b37c31c90d5ec569314.png") no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* page 5*/
+        
+        .moon {
+            background: url('http://p0.meituan.net/travelcube/ca2057d326b589f9cb81f0ef8b93a9d7948858.png') no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .moon1 {
+            background: url("http://p1.meituan.net/travelcube/d408451a1dd7cb8b08235536fd2cb0881917688.png") no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .title5 {
+            background: url("http://p0.meituan.net/travelcube/3a8df0977de9d626c1ad05ab4c72eb36187358.png") no-repeat;
+            width: 272px;
+            height: 190px;
+            position: absolute;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100%;
+        }
+        
+        .tips5 {
+            background: url("http://p1.meituan.net/travelcube/15f503832cbe0d28a5d4906d2165d8ec420166.png") no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         @keyframes reverseRotataZ {
@@ -78,6 +326,24 @@
                 -webkit-transform: rotateZ(0deg);
             }
         }
+        
+        @keyframes opacityTrans {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes opacityTrans {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -85,10 +351,10 @@
     <div id="app">
     </div>
     <div class="arrow"></div>
-    <aside class="media-wrap" id="musicBtn">
+    <!-- <aside class="media-wrap" id="musicBtn">
         <span id="musicBtnTxt" style="display: none;">关闭</span>
         <i id="" class="music-btn on"></i>
-    </aside>
+    </aside> -->
     <!-- <iframe loop="loop" id="autoplay" src="http://vfile.meituan.net/travelcube/d731940c-d4e4-4641-aadf-a1b6f93b306f.wav" allow="autoplay"></iframe> -->
     <audio src="http://vfile.meituan.net/travelcube/d731940c-d4e4-4641-aadf-a1b6f93b306f.wav" autoplay="autoplay" preload loop="loop" allow="autoplay" id="autoplay"></audio>
 </body>
@@ -102,29 +368,53 @@
     // demo 官网：http://eux.baidu.com/iSlider/demo/index_chinese.html
     var list = [ // HTML String
         {
-            content: '<div class="bg">HTML String' +
-                '<img width="100px" src=""/></div>'
-        }, {
+            /* page1 */
             content: (function() {
                 var dom = document.createElement('div');
-                dom.innerHTML = 'Element';
-                dom.style.cssText = 'font-size:3em;color:rgb(230, 230, 63);';
+                dom.innerHTML = '<div class="title">' +
+                    '</div><div class="director"></div>';
+                dom.className = 'bg1';
+                dom.style.cssText = 'font-size:13px;color:rgb(230, 230, 63);';
                 return dom;
             })()
         }, {
+            /* page2 */
             content: (function() {
                 var dom = document.createElement('div');
-                dom.innerHTML = 'Element';
-                dom.style.cssText = 'font-size:3em;color:rgb(230, 230, 63);';
+                dom.innerHTML = '<div class="porm"></div><div class="place"></div>';
+                dom.className = 'bg2';
+                dom.style.cssText = 'font-size:13px;color:rgb(230, 230, 63);';
                 return dom;
             })()
         }, {
-            content: "http://p0.meituan.net/codeman/019859b241662dc43e0472694caa15b044614.jpg.webp"
+            /* page3 */
+            content: (function() {
+                var dom = document.createElement('div');
+                dom.innerHTML = '<div class="gubei"></div><div class="title3"></div><div class="tips"></div>';
+                dom.className = 'bg3';
+                return dom;
+            })()
+        }, {
+            /* page4 */
+            content: (function() {
+                var dom = document.createElement('div');
+                dom.innerHTML = '<div class="map"></div><div class="guide"></div>';
+                dom.className = 'bg4';
+                return dom;
+            })()
+        }, {
+            /* page5 */
+            content: (function() {
+                var dom = document.createElement('div');
+                dom.innerHTML = '<div class="moon"></div><div class="moon1"></div><div class="title5"></div><div class="tips5"></div>';
+                dom.className = 'bg5';
+                return dom;
+            })()
         }
     ];
 
     var S = new iSlider(document.getElementById('app'), list, {
-        isLooping: 1,
+        isLooping: 0,
         isOverspread: 1,
         isAutoplay: 0,
         isVertical: true,
@@ -132,27 +422,61 @@
         animateType: 'rotate'
     });
 
-    S.on('slideChanged', function(index, data) {
+    S.on('slideChanged', function(index, dom) {
         console.log(index);
-        console.log(data);
+        console.log(dom);
+        console.log($(dom));
+        if (index == 1) {
+            $(dom).find(".porm").addClass("animate");
+            $(dom).find(".place").addClass("animate1");
+            // setTimeout(function() {
+            //     $(dom).find(".place").addClass("animate");
+            // }, 1000);
+
+            // setTimeout(function() {
+            //     $(dom).find(".place").addClass("redt");
+            // }, 2000);
+            // setTimeout(function() {
+            //     $(dom).find(".place").addClass("wine");
+            // }, 3000);
+        } else if (index == 2) {
+            $(dom).find(".gubei").addClass("animate");
+            $(dom).find(".title3").addClass("animate1");
+            $(dom).find(".tips").addClass("animate2");
+        } else if (index == 3) {
+            $(dom).find(".map").addClass("animate");
+            $(dom).find(".guide").addClass("animate1");
+        } else if (index == 4) {
+            $(dom).find(".moon").addClass("animate");
+            $(dom).find(".moon1").addClass("animate1");
+            $(dom).find(".title5").addClass("animate2");
+            $(dom).find(".tips5").addClass("animate3");
+        } else {
+
+        }
+
     });
 
     window.onload = function() {
-        var audio = document.getElementById('autoplay'),
-            controller = document.getElementById('musicBtn'),
-            controllerHint = document.getElementById('musicBtnTxt');
+        // var audio = document.getElementById('autoplay'),
+        //     controller = document.getElementById('musicBtn'),
+        //     controllerHint = document.getElementById('musicBtnTxt');
 
-        document.getElementById('musicBtn').addEventListener('touchstart', function() {
-            if (audio.paused) {
-                audio.play();
+        // document.getElementById('musicBtn').addEventListener('touchstart', function() {
+        //     if (audio.paused) {
+        //         audio.play();
 
-            } else {
-                audio.pause();
-            }
-            // setTimeout(function() {
-            //     controllerHint.style.display = 'none';
-            // }, 1000);
-        }, false);
+        //     } else {
+        //         audio.pause();
+        //     }
+        //     // setTimeout(function() {
+        //     //     controllerHint.style.display = 'none';
+        //     // }, 1000);
+        // }, false);
+
+        // $('.bg1').on('touchend', function() {
+        //     $(".title").show();
+        // });
     }
 </script>
 
