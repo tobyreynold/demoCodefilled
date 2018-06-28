@@ -127,7 +127,8 @@
         .title5,
         .tips5,
         .redt,
-        .wine {
+        .wine,
+        .smog {
             opacity: 0;
         }
         
@@ -179,6 +180,13 @@
             animation: opacityTrans 1s linear 4s 1 normal;
             animation-fill-mode: forwards;
             -webkit-animation: opacityTrans 1s linear 4s 1 normal;
+            -webkit-animation-fill-mode: forwards;
+        }
+        
+        .smoganimate {
+            animation: smogTrans 2s linear 4s infinite normal;
+            animation-fill-mode: forwards;
+            -webkit-animation: smogTrans 2s linear 4s infinite normal;
             -webkit-animation-fill-mode: forwards;
         }
         
@@ -283,7 +291,7 @@
         .tips {
             background: url("http://p0.meituan.net/travelcube/d751a931913ca17a288182c1127b9ecc94122.png") no-repeat;
             background-size: 100%;
-            width: 400px;
+            width: 350px;
             height: 400px;
             position: absolute;
             top: 25%;
@@ -325,7 +333,7 @@
         }
         
         .moon1 {
-            background: url("http://p1.meituan.net/travelcube/d408451a1dd7cb8b08235536fd2cb0881917688.png") no-repeat;
+            background: url("http://p0.meituan.net/travelcube/9f9ef0879aba5b20b57395ae702d7a0f200408.png") no-repeat;
             background-size: 100%;
             width: 100%;
             height: 100%;
@@ -346,13 +354,28 @@
         }
         
         .tips5 {
-            background: url("http://p1.meituan.net/travelcube/15f503832cbe0d28a5d4906d2165d8ec420166.png") no-repeat;
+            background: url('http://p1.meituan.net/travelcube/734958605caa26f042935fadb5d9ff5914486.png') no-repeat;
+            background-size: 100%;
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+        }
+        
+        .smog {
+            background: url("http://p1.meituan.net/travelcube/f5dc219549802374bd7a0ec7962c6df7456794.png") no-repeat;
             background-size: 100%;
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 20;
+            /* -webkit-animation: flash 2s linear infinite;
+            animation: flash 2s linear infinite; */
         }
         
         @keyframes reverseRotataZ {
@@ -424,6 +447,30 @@
             }
             to {
                 opacity: 1;
+            }
+        }
+        
+        @keyframes smogTrans {
+            0%,
+            50%,
+            to {
+                opacity: 1
+            }
+            25%,
+            75% {
+                opacity: 0
+            }
+        }
+        
+        @-webkit-keyframes smogTrans {
+            0%,
+            50%,
+            to {
+                opacity: 1
+            }
+            25%,
+            75% {
+                opacity: 0
             }
         }
         
@@ -505,7 +552,7 @@
             /* page5 */
             content: (function() {
                 var dom = document.createElement('div');
-                dom.innerHTML = '<div class="moon"></div><div class="moon1"></div><div class="title5"></div><div class="tips5"></div>';
+                dom.innerHTML = '<div class="moon"></div><div class="moon1"></div><div class="smog"></div><div class="title5"></div><div class="tips5"></div>';
                 dom.className = 'bg5';
                 return dom;
             })()
@@ -550,6 +597,7 @@
             $(dom).find(".moon").addClass("animate");
             $(dom).find(".moon1").addClass("animate1");
             $(dom).find(".title5").addClass("animate2");
+            $(dom).find(".smog").addClass("smoganimate");
             $(dom).find(".tips5").addClass("animate3");
         } else {
 
