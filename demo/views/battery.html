@@ -69,7 +69,8 @@
             text-align: center;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: url("http://p0.meituan.net/travelcube/6d6a43f26fcf6b0edb890ab496f2ba262268768.gif") no-repeat;
+            background-size: cover;
         }
         
         .media-wrap {
@@ -240,9 +241,9 @@
         
         .placeanimate {
             /* opacity: 1; */
-            animation: placeTrans 7s linear 2s infinite alternate;
+            animation: placeTrans 10s linear 2s infinite alternate;
             /* animation-fill-mode: forwards; */
-            -webkit-animation: placeTrans 7s linear 2s infinite alternate;
+            -webkit-animation: placeTrans 10s linear 2s infinite alternate;
             /* -webkit-animation-fill-mode: forwards; */
         }
         
@@ -294,7 +295,7 @@
         }
         
         .title3 {
-            background: url("https://p1.meituan.net/travelcube/d5cf44b1d9acbc1649caf7c0ac1e4eca23336.png") no-repeat;
+            background: url("http://p1.meituan.net/travelcube/d5cf44b1d9acbc1649caf7c0ac1e4eca23336.png") no-repeat;
             width: 272px;
             height: 190px;
             position: absolute;
@@ -305,7 +306,7 @@
         }
         
         .tips {
-            background: url("http://p0.meituan.net/travelcube/d751a931913ca17a288182c1127b9ecc94122.png") no-repeat;
+            background: url("http://p0.meituan.net/travelcube/3200dc2110a4838421123df005a4bbeb108632.png") no-repeat;
             background-size: 100%;
             width: 350px;
             height: 400px;
@@ -580,17 +581,6 @@
         if (index == 1) {
             $(dom).find(".porm").addClass("animate");
             $(dom).find(".place").addClass("placeanimate");
-            // $(dom).find(".redt").addClass("placeanimate1");
-            // $(dom).find(".wine").addClass("placeanimate2");
-
-            // setTimeout(function() {
-            //     $(dom).find(".place").css('display', 'none');
-            //     // $(dom).find(".redt").css('display', 'none');
-            // }, 3000);
-            // setTimeout(function() {
-            //     $(dom).find(".redt").css('display', 'none');
-            // }, 4000);
-
 
         } else if (index == 2) {
             $(dom).find(".gubei").addClass("animate");
@@ -600,11 +590,11 @@
             $(dom).find(".map").addClass("animate");
             $(dom).find(".guide").addClass("animate1");
         } else if (index == 4) {
-            $(dom).find(".moon").addClass("animate");
-            $(dom).find(".moon1").addClass("animate1");
-            $(dom).find(".title5").addClass("animate2");
-            $(dom).find(".smog").addClass("smoganimate");
-            $(dom).find(".tips5").addClass("animate3");
+            // $(dom).find(".moon").addClass("animate");
+            // $(dom).find(".moon1").addClass("animate1");
+            // $(dom).find(".title5").addClass("animate2");
+            // $(dom).find(".smog").addClass("smoganimate");
+            // $(dom).find(".tips5").addClass("animate3");
         } else {
 
         }
