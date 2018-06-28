@@ -28,10 +28,11 @@
         .bg1 {
             font-size: 4em;
             color: #FFF;
+            background-color: #FFF;
             text-align: center;
             width: 100%;
             height: 100%;
-            background: url('http://p0.meituan.net/travelcube/8d8af2366901d55c623fa5940e80c31771299.png') no-repeat;
+            /* background: url('http://p0.meituan.net/travelcube/8d8af2366901d55c623fa5940e80c31771299.png') no-repeat; */
             background-size: 100%;
         }
         
@@ -41,7 +42,7 @@
             text-align: center;
             width: 100%;
             height: 120%;
-            background: url('http://p1.meituan.net/travelcube/4bf928a12312c7359bfb78b122c00c21164940.png') repeat-y;
+            background: url('http://p1.meituan.net/travelcube/fa88f5c600ac9d4822e63950e966fa21331255.png') repeat-y;
             background-size: 100%;
         }
         
@@ -50,7 +51,7 @@
             text-align: center;
             width: 100%;
             height: 120%;
-            background: url('http://p1.meituan.net/travelcube/4bf928a12312c7359bfb78b122c00c21164940.png') repeat-y;
+            background: url('http://p1.meituan.net/travelcube/fa88f5c600ac9d4822e63950e966fa21331255.png') repeat-y;
             background-size: 100%;
         }
         
@@ -100,15 +101,16 @@
         }
         
         .smoke {
-            background: url('https://p1.meituan.net/travelcube/d53d0fc48ddfce92f3c7604f62c638bf193850.png') repeat;
-            height: 400px;
+            background-image: url('http://p0.meituan.net/travelcube/85cebd3d2f915bece06aa16d94d5f23a132720.png');
+            background-repeat: repeat-x;
+            height: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 500px;
-            background-size: contain;
-            animation: flash 2s linear infinite;
-            -webkit-animation: flash 2s linear infinite;
+            width: 100%;
+            background-size: 100% 100%;
+            animation: smoke 3s linear infinite;
+            -webkit-animation: smoke 3s linear infinite;
         }
         
         .title,
@@ -227,7 +229,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
+            top: 100px;
             left: 0;
             background-size: 100%;
             z-index: 10;
@@ -237,7 +239,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
+            top: 100px;
             left: 0;
             background-size: 100%;
             z-index: 12;
@@ -248,7 +250,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
+            top: 100px;
             left: 0;
             background-size: 100%;
             z-index: 14;
@@ -261,7 +263,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            bottom: 0;
+            top: 100px;
             left: 0;
             background-size: 100%;
             z-index: 10;
@@ -279,7 +281,7 @@
         }
         
         .tips {
-            background: url("http://p0.meituan.net/travelcube/8d64bb60e9196ab72de8662617889f5785223.png") no-repeat;
+            background: url("http://p0.meituan.net/travelcube/d751a931913ca17a288182c1127b9ecc94122.png") no-repeat;
             background-size: 100%;
             width: 300px;
             height: 400px;
@@ -371,6 +373,42 @@
             }
         }
         
+        @keyframes smoke {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(10%);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(-10%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        @-webkit-keyframes smoke {
+            0% {
+                -webkit-transform: translateX(0);
+            }
+            25% {
+                -webkit-transform: translateX(10%);
+            }
+            50% {
+                -webkit-transform: translateX(0);
+            }
+            75% {
+                -webkit-transform: translateX(-10%);
+            }
+            100% {
+                -webkit-transform: translateX(0);
+            }
+        }
+        
         @keyframes opacityTrans {
             from {
                 opacity: 0;
@@ -436,7 +474,6 @@
                 dom.innerHTML = '<div class="title">' +
                     '</div><div class="director"></div><div class="smoke"></div>';
                 dom.className = 'bg1';
-                dom.style.cssText = 'font-size:13px;color:rgb(230, 230, 63);';
                 return dom;
             })()
         }, {
