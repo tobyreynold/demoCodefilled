@@ -318,8 +318,8 @@
             z-index: 14;
             background-image: url("http://p0.meituan.net/travelcube/17b2fef4422bed64d8df0a886843bb35587569.png");
         }
-        /* page 3*/
         
+        /* page 3*/
         .gubei {
             background: url("http://p0.meituan.net/travelcube/07b3a8b87c79122535a854197738b3e61024722.png") no-repeat;
             width: 100%;
@@ -332,7 +332,7 @@
         }
         
         .title3 {
-            background: url("http://p1.meituan.net/travelcube/d5cf44b1d9acbc1649caf7c0ac1e4eca23336.png") no-repeat;
+            background: url("http://p1.meituan.net/travelcube/843f5bcc34516e1ebba1011958f7933a54490.png") no-repeat;
             width: 272px;
             height: 190px;
             position: absolute;
@@ -541,15 +541,10 @@
     <div id="app">
     </div>
     <div class="arrow"></div>
-    <!-- <aside class="media-wrap" id="musicBtn">
-        <span id="musicBtnTxt" style="display: none;">关闭</span>
-        <i id="" class="music-btn on"></i>
-    </aside> -->
     <!-- <iframe loop="loop" id="autoplay" src="http://vfile.meituan.net/travelcube/d731940c-d4e4-4641-aadf-a1b6f93b306f.wav" allow="autoplay"></iframe> -->
     <audio src="http://vfile.meituan.net/travelcube/c6bf7dc6-37f9-4d8f-acfa-dc75099bb43a.mp3" autoplay="autoplay" preload loop="loop" allow="autoplay" id="autoplay"></audio>
 </body>
 <!-- 基础依赖js start -->
-
 <script type="text/javascript" src="http://xs01.meituan.net/wmcdn/zepto/1.2.0/zepto.min.js"></script>
 <script type="text/javascript" src="http://xs01.meituan.net/wmcdn/islider/2.2.0/iSlider.js"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -627,31 +622,18 @@
             $(dom).find(".map").addClass("animate");
             $(dom).find(".guide").addClass("animate1");
         } else if (index == 4) {
-            // $(dom).find(".moon").addClass("animate");
-            // $(dom).find(".moon1").addClass("animate1");
-            // $(dom).find(".title5").addClass("animate2");
-            // $(dom).find(".smog").addClass("smoganimate");
-            // $(dom).find(".tips5").addClass("animate3");
         } else {
 
         }
 
     });
-
-    //window.onload = function() {
-        // var audio = document.getElementById('autoplay'),
-        //     controller = document.getElementById('musicBtn'),
-        //     controllerHint = document.getElementById('musicBtnTxt');
-
-        // audio.play();
         //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
-        var audio = document.getElementById("autoplay");
+    var audio = document.getElementById("autoplay");
+    audio.play();
+    //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    document.addEventListener("WeixinJSBridgeReady", function() {
         audio.play();
-        //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
-        document.addEventListener("WeixinJSBridgeReady", function() {
-            audio.play();
-        }, false);
-    //}
+    }, false);
 </script>
 
 </html>
