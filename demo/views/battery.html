@@ -203,7 +203,7 @@
             height: 300px;
             width: 400px;
             position: absolute;
-            top: 3%;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
             background-size: 100%;
@@ -432,6 +432,10 @@
             animation: flash 2s linear infinite; */
         }
         
+        .fix {
+            top: 0;
+        }
+        
         @keyframes reverseRotataZ {
             from {
                 transform: rotateZ(-360deg);
@@ -620,7 +624,8 @@
             if (iphoneX) {
                 $(dom).find(".place").addClass("placeanimate");
             } else {
-                $(dom).find(".place").css('top', '0').addClass("placeanimate");
+                $(dom).find(".place").addClass('fix');
+                $(dom).find(".place").addClass("placeanimate");
             }
         } else if (index == 2) {
             if (iphoneX) {
