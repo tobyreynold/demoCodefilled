@@ -214,31 +214,31 @@
             0% {
                 background-image: url("http://p0.meituan.net/travelcube/faa62e557002dc4b4fc1ba4b85bf9d131190944.png");
             }
-            2%{
-                background-image:transparent;
+            2% {
+                background-image: transparent;
             }
-            28%{
-                background-image:transparent;
+            28% {
+                background-image: transparent;
             }
             30% {
                 background-image: url("http://p0.meituan.net/travelcube/d5599df42e41d99ff17df63e3f39c0d61187186.png");
             }
-            32%{
-                background-image:transparent;
+            32% {
+                background-image: transparent;
             }
-            58%{
-                background-image:transparent;
+            58% {
+                background-image: transparent;
             }
             60% {
                 background-image: url("http://p0.meituan.net/travelcube/2b7df411d3a294da17e0b4a024540828225177.png");
             }
-            62%{
-                background-image:transparent;
+            62% {
+                background-image: transparent;
             }
-            98%{
-                background-image:transparent;
+            98% {
+                background-image: transparent;
             }
-            100%{
+            100% {
                 background-image: url("http://p0.meituan.net/travelcube/d7e823aa2b38ce1d84d93cdbf010beaf232981.png");
             }
         }
@@ -247,31 +247,31 @@
             0% {
                 background-image: url("http://p0.meituan.net/travelcube/faa62e557002dc4b4fc1ba4b85bf9d131190944.png");
             }
-            2%{
-                background-image:transparent;
+            2% {
+                background-image: transparent;
             }
-            28%{
-                background-image:transparent;
+            28% {
+                background-image: transparent;
             }
             30% {
                 background-image: url("http://p0.meituan.net/travelcube/d5599df42e41d99ff17df63e3f39c0d61187186.png");
             }
-            32%{
-                background-image:transparent;
+            32% {
+                background-image: transparent;
             }
-            58%{
-                background-image:transparent;
+            58% {
+                background-image: transparent;
             }
             60% {
                 background-image: url("http://p0.meituan.net/travelcube/2b7df411d3a294da17e0b4a024540828225177.png");
             }
-            62%{
-                background-image:transparent;
+            62% {
+                background-image: transparent;
             }
-            98%{
-                background-image:transparent;
+            98% {
+                background-image: transparent;
             }
-            100%{
+            100% {
                 background-image: url("http://p0.meituan.net/travelcube/d7e823aa2b38ce1d84d93cdbf010beaf232981.png");
             }
         }
@@ -318,8 +318,8 @@
             z-index: 14;
             background-image: url("http://p0.meituan.net/travelcube/17b2fef4422bed64d8df0a886843bb35587569.png");
         }
-        
         /* page 3*/
+        
         .gubei {
             background: url("http://p0.meituan.net/travelcube/07b3a8b87c79122535a854197738b3e61024722.png") no-repeat;
             width: 100%;
@@ -531,12 +531,12 @@
 </head>
 
 <body>
-    <img src="http://p0.meituan.net/travelcube/faa62e557002dc4b4fc1ba4b85bf9d131190944.png" style="display: none;">
+    <!-- <img src="http://p0.meituan.net/travelcube/faa62e557002dc4b4fc1ba4b85bf9d131190944.png" style="display: none;">
     <img src="http://p0.meituan.net/travelcube/d5599df42e41d99ff17df63e3f39c0d61187186.png" style="display: none;">
     <img src="http://p0.meituan.net/travelcube/2b7df411d3a294da17e0b4a024540828225177.png" style="display: none;">
     <img src="http://p0.meituan.net/travelcube/d7e823aa2b38ce1d84d93cdbf010beaf232981.png" style="display: none;">
     <img src="http://p1.meituan.net/travelcube/fa88f5c600ac9d4822e63950e966fa21331255.png" style="display: none;">
-    <img src="http://p1.meituan.net/travelcube/1980a1a7ae251beec9216750447cf3cd491839.png" style="display: none;">
+    <img src="http://p1.meituan.net/travelcube/1980a1a7ae251beec9216750447cf3cd491839.png" style="display: none;"> -->
 
     <div id="app">
     </div>
@@ -551,6 +551,11 @@
 <!-- 基础依赖js end -->
 
 <script>
+    /* 判断一下是不是iPhone X改变高度底部贴合*/
+    var iphoneX = (function isIphoneX() {
+        return /iphone/gi.test(navigator.userAgent) && (screen.height == 812 && screen.width == 375)
+    })();
+
     // demo 官网：http://eux.baidu.com/iSlider/demo/index_chinese.html
     var list = [ // HTML String
         {
@@ -612,22 +617,28 @@
         console.log($(dom));
         if (index == 1) {
             $(dom).find(".porm").addClass("animate");
-            $(dom).find(".place").addClass("placeanimate");
-
+            if (iphoneX) {
+                $(dom).find(".place").addClass("placeanimate");
+            } else {
+                $(dom).find(".place").css('top', '0').addClass("placeanimate");
+            }
         } else if (index == 2) {
-            $(dom).find(".gubei").addClass("animate");
+            if (iphoneX) {
+                $(dom).find(".gubei").addClass("animate");
+            } else {
+                $(dom).find(".gubei").css('top', '0').addClass("animate");
+            }
             $(dom).find(".title3").addClass("animate1");
             $(dom).find(".tips").addClass("animate2");
         } else if (index == 3) {
             $(dom).find(".map").addClass("animate");
             $(dom).find(".guide").addClass("animate1");
-        } else if (index == 4) {
-        } else {
+        } else if (index == 4) {} else {
 
         }
 
     });
-        //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+    //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
     var audio = document.getElementById("autoplay");
     audio.play();
     //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
