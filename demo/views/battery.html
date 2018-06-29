@@ -535,6 +535,10 @@
         return /iphone/gi.test(navigator.userAgent) && (screen.height == 812 && screen.width == 375)
     })();
 
+    if (!iphoneX) {
+        $(".bg1").css("width", "90%");
+    }
+
     // demo 官网：http://eux.baidu.com/iSlider/demo/index_chinese.html
     var list = [ // HTML String
         {
