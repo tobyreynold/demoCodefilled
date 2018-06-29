@@ -330,13 +330,24 @@
         }
         
         .guide {
-            background: url("http://p0.meituan.net/travelcube/8e2ab1498cfe9d6c60b37c31c90d5ec569314.png") no-repeat;
+            background: url("http://p1.meituan.net/travelcube/ef9f1688dedbb1ad183b782faa5a9a4531249.png") no-repeat;
             background-size: 100%;
             width: 100%;
             height: 100%;
             position: absolute;
             top: 25px;
             left: 0;
+        }
+        
+        .guide1 {
+            background: url("http://p0.meituan.net/travelcube/328ae915e3bd647d06e97ee26a488fba50968.png") no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background-size: 100%;
+            z-index: 10;
         }
         /* page 5*/
         
@@ -556,7 +567,7 @@
             /* page4 */
             content: (function() {
                 var dom = document.createElement('div');
-                dom.innerHTML = '<div class="map"></div><div class="guide"></div>';
+                dom.innerHTML = '<div class="map"></div><div class="guide"></div><div class="guide1"></div>';
                 dom.className = 'bg4';
                 return dom;
             })()
@@ -599,6 +610,9 @@
         } else if (index == 3) {
             $(dom).find(".map").addClass("animate");
             $(dom).find(".guide").addClass("animate1");
+            if (!iphoneX) {
+                $(dom).find(".guide1").addClass('fix');
+            }
         } else if (index == 4) {} else {
 
         }
